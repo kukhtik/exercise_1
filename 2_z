@@ -1,0 +1,24 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Input a number x: ");
+        int x = in.nextInt();
+        if (x == 0) {
+            System.out.print("равно 0");
+        } else if (x > 0 && x <= 100) {
+            System.out.print("больше 0");
+        } else if (x > 100 &&  x <= 200) {
+            System.out.print("больше 100");
+        } else if (x > 200){
+            System.out.print("больше 200");
+        } else {
+            System.out.print("число не натуральное");
+        }
+        in.close();
+    }
+}
