@@ -1,0 +1,15 @@
+package com.company;
+import java.util.Scanner;
+public class Z2Z {
+
+    public static void main(String[] args) {
+        Scanner x = new Scanner(System.in);
+        System.out.print("Число дай: ");
+        int xx = x.nextInt();
+        int xxx = xx%2;
+        int y = 1, n = 0;
+        xxx = (xxx > 0) ? (y) : (n);
+        boolean V = (xxx == n);
+        System.out.print(V);
+    }
+}
