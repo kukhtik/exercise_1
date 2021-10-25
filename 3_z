@@ -1,0 +1,58 @@
+package com.company;
+
+import java.util.Arrays;
+
+public class w1111we {
+
+    public static void main(String[] args) {
+        int n = 3, k = 50;
+        int value = 0;
+        int max1 = 0, max2 = 0, min1 = 0, min2 = 0;
+        int xx = n + (int) (Math.random() * k);
+        int yy = n + (int) (Math.random() * k);
+        int[][] M = new int[xx][yy];
+        for (int i = 0; i < xx; i++) {
+            for (int j = 0; j < yy; j++) {
+                M[i][j] = n + (int) (Math.random() * k);
+            }
+        }
+
+        for (int x = 0; x < M.length; ++x) {
+            for (int y = 0; y < M[x].length; ++y) {
+                int lastY = y + 1;
+                for (int lastX = x; lastX < M.length; ++lastX) {
+                    while (lastY < M[lastX].length) {
+                        if (M[lastX][lastY] < M[x][y]) {
+                            int tmp = M[x][y];
+                            M[x][y] = M[lastX][lastY];
+                            M[lastX][lastY] = tmp;
+                        }
+                        ++lastY;
+                    }
+                    lastY = 0;
+                }
+            }
+        }
+        int max = M[0][0];
+        int min = M[0][0];
+
+        for (int i = 0; i < M[0].length; i++) {
+            for (int j = 0; j < M.length; j++) {
+
+                if (max < M[j][i]) {
+                    max = M[j][i];
+                    max1 = j;
+                    max2 = i;
+                }
+                if (min > M[j][i]) {
+                    min = M[j][i];
+                    min1 = j;
+                    min2 = i;
+                }
+                value += M[j][i];
+            }
+        }
+        String txt = "Максимальный элемент %d Индекс (%d,%d) Минимальный элемент %d Индекс (%d,%d)";
+        System.out.println(String.format(txt, max, max1, max2, min, min1, min2));
+    }
+}
