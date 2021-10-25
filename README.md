@@ -1,2 +1,2 @@
 # exercise_1
-calculate 
+calculate f(x)=a*tg(x)+b|x|
